@@ -1,5 +1,5 @@
+package grabgravatar
 // credits: https://golangcode.com/download-a-file-from-a-url/
-package main
 
 import (
 	"crypto/md5"
@@ -8,19 +8,6 @@ import (
 	"net/http"
 	"os"
 )
-
-func main() {
-
-	if len(os.Args) <= 2 {
-		panic("need email to look for and image with. Example: ./Grabgravatar foo@example.com 1024")
-	}
-	mail := os.Args[1]
-	size := os.Args[2]
-
-	if err := DownloadFile(mail, size); err != nil {
-		panic(err)
-	}
-}
 
 // DownloadFile will download a url to a local file. It's efficient because it will
 // write as it downloads and not load the whole file into memory.
