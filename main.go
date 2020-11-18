@@ -1,8 +1,8 @@
 package main
 
 import (
+	"grabgravatar/go/downloader"
 	"os"
-	"grabgravatar"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 	mail := os.Args[1]
 	size := os.Args[2]
 
-	if err := grabgravatar.DownloadFile(mail, size); err != nil {
+	if err := downloader.DownloadFile(mail, size); err != nil {
 		panic(err)
 	}
 }
